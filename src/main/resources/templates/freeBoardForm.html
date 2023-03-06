@@ -84,9 +84,29 @@
         alert("취소되었습니다")
         return false;
       } else {
-        alert("등록되었습니다.")
+        //alert("등록되었습니다.")
         return true;
       }
+    }
+    
+    //일정시간이 지날때마다 반복하는 함수
+    window.onload=function () {
+      setInterval(function (){
+        sessionAdd();
+      },5000)//5초마다 반복
+    }
+    
+    //세션 만료시간 연장을 위한 호출
+    function sessionAdd(){
+     $.ajax({
+       url:"/sessionAdd",
+       method: 'POST',
+       success: function (){
+                },
+       error: function (){
+         alert("에러발생")
+       }
+     })
     }
   </script>
   </body>

@@ -98,7 +98,7 @@ public class JyUserController {
     public String UserLogin(@AuthenticationPrincipal PrincipalDetails principalDetails, HttpSession session) {
         JyUser jyUserSession = principalDetails.getJyUser();
         session.setAttribute("jyUserSession", jyUserSession);
-        
+        session.setMaxInactiveInterval(10);// 임시 10분설정
         return "jyHome";
     }
     

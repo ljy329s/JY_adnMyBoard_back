@@ -19,10 +19,10 @@ spring:
               - email
               - profile
 
-  servlet:
-    multipart:
-      max-file-size: 50MB
-      max-request-size: 50MB
+#  servlet:
+#    multipart:
+#      max-file-size: 50MB
+#      max-request-size: 50MB
 
   thymeleaf:
     cache: false
@@ -50,11 +50,12 @@ spring:
 #    save-dir: C:\\upload\
 #    save-user-dir: C:\\upload_profile\
 
-server:
-  port: 8080
-  error:
-    whitelabel:
-      enabled: false
+  server:
+    port: 8080
+    error:
+      whitelabel:
+        enabled: false
+
 
 ---
 spring:

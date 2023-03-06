@@ -40,6 +40,7 @@ public class SecurityConfig {
                 .logout()
                     .logoutUrl("/logout")
                     .logoutSuccessUrl("/")
+                    .invalidateHttpSession(true).deleteCookies("JSESSIONID")
                 .and()
                 .oauth2Login()
                 .loginPage("/loginForm")
@@ -50,7 +51,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean//static적으니까 순환참조에러 안남
+    @Bean
     public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
